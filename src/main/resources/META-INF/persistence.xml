@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+<persistence-unit name="primary" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>java:jboss/datasources/RailwayDS</jta-data-source>
+    <class>com.epam.java.lab.railway.model.User</class>
+<properties>
+    <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+    <property name="hibernate.max_fetch_depth" value="3" />
+    <property name="hibernate.hbm2ddl.auto" value="update" />
+    <property name="hibernate.show_sql" value="true" />
+    <property name="hibernate.connection.url" value="jdbc:h2:tcp://localhost/~/javalab" />
+    <property name="hibernate.connection.driver_class" value="org.h2.Driver" />
+    <property name="hibernate.connection.username" value="sa" />
+    <property name="hibernate.connection.password" value="sa" />
+</properties>
+</persistence-unit>
+</persistence>

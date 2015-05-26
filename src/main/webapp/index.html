@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="BasicHttpAuthExample">
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Basic HTTP Authentication Example</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+<div class="col-md-12">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container" align="center">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Online ticket booking</a>
+            </div>
+
+            <div class="navbar-collapse collapse navbar-responsive-collapse" ng-controller="MainController">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">Shedule</a></li>
+                    <li><a href="#">My orders</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-show="authed"><a>{{name}}</a></li>
+                    <li ng-show="authed"><a>Log out</a></li>
+                    <li ng-hide="authed" ng-class="{ active: isActive('/login')}"><a href="/railway-1.0-SNAPSHOT/#/login">Sign in</a></li>
+                    <li ng-hide="authed" ng-class="{ active: isActive('/register')}"><a href="/railway-1.0-SNAPSHOT/#/register">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-xs-offset-2 col-xs-8">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    <div class="credits text-center">
+
+
+    </div>
+    </div>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="modules/authentication/services.js"></script>
+    <script src="modules/authentication/controllers.js"></script>
+    <script src="modules/register/services.js"></script>
+    <script src="modules/register/controllers.js"></script>
+    <script src="modules/home/controllers.js"></script>
+</body>
+</html>
